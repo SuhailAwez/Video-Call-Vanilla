@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #181c24;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  height: 100%; /* Ensure body takes full viewport height */
+  margin: 0;
+}
+
+#videoContainer {
+  display: flex;
+  width: 100%; /* Take full width */
+  flex-grow: 1; /* Allow container to fill available vertical space */
+  position: relative; /* Keep relative for absolute children */
+  overflow: hidden;
+  justify-content: center; /* Center video elements horizontally */
+  align-items: center; /* Center video elements vertically */
+}
+
+#actionButtons {
+  position: absolute;
+  bottom: 20px; /* Position 20px from the bottom of the #videoContainer */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally based on its own width */
+  z-index: 3;
+}
+
+/* Removed styles for Peer ID text overlapping video */
+/* div:has(#myPeerId) {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  color: #f3f3f3;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 4px;
+} */
+
+/* Removed styles for remote Peer ID input overlapping video */
+/* #remotePeerId {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f3f3f3;
+  border: none;
+  text-align: center;
+} */
+
+h1 {
+  /* Removed as it was likely causing whitespace and not needed for this layout */
+  display: none;
+}
+
+#localVideo,
+#remoteVideo {
+  width: 50%; /* Each video takes 50% of the container */
+  height: 100%; /* Make videos fill the height of the container */
+  margin: 0;
+  background: #222;
+  border: none;
+  box-shadow: none;
+  object-fit: cover;
+}
+
+#localVideo {
+  opacity: 1;
+  z-index: 1;
+}
+
+button {
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  margin: 0 15px; /* Increased space between buttons */
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#myPeerId {
+  font-weight: bold;
+  color: #00c3ff;
+}
